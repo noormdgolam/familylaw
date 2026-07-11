@@ -3,8 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us | Family Law</title>
-    <meta name="description" content="Get in touch with the Family Law Guides team.">
+    <title>Contact Us | Family Law Guides | familylaw.bongshai.com</title>
+    <meta name="description" content="Contact Us | Get in touch with the Family Law Guides team. | familylaw.bongshai.com | Read More">
+    
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-YOUR_CLIENT_ID" crossorigin="anonymous"></script>
+
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/assets/css/index.css">
 </head>
@@ -48,5 +52,20 @@
             <p class="text-sm text-muted">&copy; 2026 Family Law Guides. All rights reserved.</p>
         </div>
     </footer>
+    
+    <!-- Cookie Banner -->
+    <div id="cookie-banner" class="cookie-banner" style="display: none;">
+        <div>We use cookies to serve personalized ads and analyze traffic. By continuing, you agree to our <a href="/privacy-policy" style="color: var(--secondary);">Privacy Policy</a>.</div>
+        <button onclick="acceptCookies()" class="btn" style="padding: 0.5rem 1rem;">Accept</button>
+    </div>
+    <script>
+        if (!localStorage.getItem('cookieConsent')) {
+            document.getElementById('cookie-banner').style.display = 'flex';
+        }
+        function acceptCookies() {
+            localStorage.setItem('cookieConsent', 'true');
+            document.getElementById('cookie-banner').style.display = 'none';
+        }
+    </script>
 </body>
 </html>

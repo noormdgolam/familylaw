@@ -73,8 +73,8 @@ def generate_intl_html(country):
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{title} | International Guides</title>
-    <meta name="description" content="{desc}">
+    <title>{title} | International Guides | familylaw.bongshai.com</title>
+    <meta name="description" content="{title} | {desc} | familylaw.bongshai.com | Read Guide">
     <link rel="canonical" href="{url}">
     
     <!-- Open Graph / Facebook -->
@@ -93,15 +93,11 @@ def generate_intl_html(country):
     {schema}
     </script>
     
-    <!-- Google AdSense Placeholder -->
-    <!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script> -->
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-YOUR_CLIENT_ID" crossorigin="anonymous"></script>
 
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/assets/css/index.css">
-    <style>
-        .ad-placeholder {{ width: 100%; min-height: 90px; background: #e5e7eb; display: flex; align-items: center; justify-content: center; color: #6b7280; font-size: 0.875rem; margin: 2rem 0; border: 1px dashed #9ca3af; }}
-        .cookie-banner {{ position: fixed; bottom: 0; left: 0; right: 0; background: var(--primary); color: white; padding: 1rem; display: flex; justify-content: space-between; align-items: center; z-index: 1000; box-shadow: 0 -4px 10px rgba(0,0,0,0.1); }}
-    </style>
 </head>
 <body>
     <header class="site-header">
@@ -190,8 +186,11 @@ index_html = f"""<!DOCTYPE html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>International Family Law Guides</title>
-    <meta name="description" content="Global guides for family law, covering the UK, Canada, Australia, Ireland, and South Africa.">
+    <title>International Family Law Guides | familylaw.bongshai.com</title>
+    <meta name="description" content="International Family Law Guides | Global guides for family law, covering the UK, Canada, Australia, Ireland, and South Africa. | familylaw.bongshai.com | Read Guide">
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-YOUR_CLIENT_ID" crossorigin="anonymous"></script>
+
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/assets/css/index.css">
 </head>
@@ -227,6 +226,26 @@ index_html = f"""<!DOCTYPE html>
             </div>''' for c in countries])}
         </div>
     </main>
+    <footer class="site-footer">
+        <div class="container text-center">
+            <p class="text-sm text-muted">&copy; 2026 Family Law Guides. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Cookie Banner -->
+    <div id="cookie-banner" class="cookie-banner" style="display: none;">
+        <div>We use cookies to serve personalized ads and analyze traffic. By continuing, you agree to our <a href="/privacy-policy" style="color: var(--secondary);">Privacy Policy</a>.</div>
+        <button onclick="acceptCookies()" class="btn" style="padding: 0.5rem 1rem;">Accept</button>
+    </div>
+    <script>
+        if (!localStorage.getItem('cookieConsent')) {{
+            document.getElementById('cookie-banner').style.display = 'flex';
+        }}
+        function acceptCookies() {{
+            localStorage.setItem('cookieConsent', 'true');
+            document.getElementById('cookie-banner').style.display = 'none';
+        }}
+    </script>
 </body>
 </html>"""
 

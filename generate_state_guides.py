@@ -48,8 +48,8 @@ def generate_state_html(state):
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{title}</title>
-    <meta name="description" content="{desc}">
+    <title>{title} | familylaw.bongshai.com</title>
+    <meta name="description" content="{title} | {desc} | familylaw.bongshai.com | Read Guide">
     <link rel="canonical" href="{url}">
     
     <!-- Open Graph / Facebook -->
@@ -68,8 +68,8 @@ def generate_state_html(state):
     {schema}
     </script>
     
-    <!-- Google AdSense Placeholder -->
-    <!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script> -->
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-YOUR_CLIENT_ID" crossorigin="anonymous"></script>
 
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/assets/css/index.css">
@@ -194,7 +194,12 @@ index_html = f"""<!DOCTYPE html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>State Statute of Limitations Guides | Family Law</title>
+    <title>State Statute of Limitations Guides | familylaw.bongshai.com</title>
+    <meta name="description" content="State Statute of Limitations Guides | Find the family law statute of limitations guide specific to your jurisdiction. | familylaw.bongshai.com | Browse States">
+    
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-YOUR_CLIENT_ID" crossorigin="anonymous"></script>
+
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/assets/css/index.css">
     <style>
@@ -251,6 +256,26 @@ index_html = f"""<!DOCTYPE html>
             {''.join([f'<a href="/states/{s.lower().replace(" ", "-")}" class="state-link">{s}</a>' for s in states])}
         </div>
     </main>
+    <footer class="site-footer">
+        <div class="container text-center">
+            <p class="text-sm text-muted">&copy; 2026 Family Law Guides. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Cookie Banner -->
+    <div id="cookie-banner" class="cookie-banner" style="display: none;">
+        <div>We use cookies to serve personalized ads and analyze traffic. By continuing, you agree to our <a href="/privacy-policy" style="color: var(--secondary);">Privacy Policy</a>.</div>
+        <button onclick="acceptCookies()" class="btn" style="padding: 0.5rem 1rem;">Accept</button>
+    </div>
+    <script>
+        if (!localStorage.getItem('cookieConsent')) {{
+            document.getElementById('cookie-banner').style.display = 'flex';
+        }}
+        function acceptCookies() {{
+            localStorage.setItem('cookieConsent', 'true');
+            document.getElementById('cookie-banner').style.display = 'none';
+        }}
+    </script>
 </body>
 </html>"""
 

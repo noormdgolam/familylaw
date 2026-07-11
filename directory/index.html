@@ -3,8 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Find a Family Law Attorney | Directory</title>
-    <meta name="description" content="Search our comprehensive directory of top-rated family law attorneys in your state. Find experts in divorce, child custody, alimony, and more.">
+    <title>Find a Family Law Attorney | Directory | familylaw.bongshai.com</title>
+    <meta name="description" content="Find a Family Law Attorney | Search our comprehensive directory of top-rated family law attorneys in your state. | familylaw.bongshai.com | Find an Attorney Now!">
+    
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-YOUR_CLIENT_ID" crossorigin="anonymous"></script>
+
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/assets/css/index.css">
     <style>
@@ -257,6 +261,22 @@
                 padding: 4rem 1rem 6rem;
             }
         }
+        
+        /* Modal Styles */
+        .modal {
+            display: none; position: fixed; z-index: 1000; left: 0; top: 0;
+            width: 100%; height: 100%; overflow: auto; background-color: rgba(0,0,0,0.5);
+            align-items: center; justify-content: center;
+        }
+        .modal-content {
+            background-color: var(--surface);
+            margin: auto; padding: 2rem; border-radius: 16px;
+            width: 90%; max-width: 600px; position: relative;
+        }
+        .close {
+            color: #aaa; position: absolute; right: 20px; top: 10px; font-size: 28px; font-weight: bold; cursor: pointer;
+        }
+        .close:hover { color: #000; }
     </style>
 </head>
 <body>
@@ -282,7 +302,7 @@
 
     <div class="directory-header">
         <div class="directory-header-content">
-            <h1 style="color: white; font-size: 3.5rem;">Find the Right Family Law Attorney</h1>
+            <h1 style="color: white; font-size: 3.5rem;">Find a Family Law Attorney: Connect with Top-Rated Pros</h1>
             <p style="color: rgba(255,255,255,0.8); font-size: 1.25rem; max-width: 600px; margin: 0 auto;">Connect with top-rated, verified legal professionals specializing in divorce, custody, and support cases in your state.</p>
         </div>
     </div>
@@ -292,16 +312,15 @@
             <input type="text" class="glass-input" id="dir-search" placeholder="Search by name or law firm...">
             <select class="glass-select" id="dir-state">
                 <option value="">All States</option>
-                <option value="California">California</option>
-                <option value="Texas">Texas</option>
-                <option value="Florida">Florida</option>
-                <option value="New York">New York</option>
             </select>
             <select class="glass-select" id="dir-specialty">
                 <option value="">All Specialties</option>
                 <option value="Divorce">Divorce</option>
                 <option value="Child Custody">Child Custody</option>
                 <option value="Alimony">Alimony</option>
+                <option value="Mediation">Mediation</option>
+                <option value="Property Division">Property Division</option>
+                <option value="Paternity">Paternity</option>
             </select>
             <button class="search-btn">Search Directory</button>
         </div>
@@ -317,76 +336,17 @@
         </div>
     </footer>
 
+    <script src="/assets/js/attorneys.js"></script>
     <script>
-        // Mock Data for the Directory (Cheap & Free Local US Services)
-        const attorneys = [
-            {
-                name: "Legal Services of Northern California",
-                firm: "Non-Profit Legal Aid",
-                location: "Sacramento, CA",
-                state: "California",
-                rating: "4.8",
-                reviews: 412,
-                image: "https://images.unsplash.com/photo-1577415124269-b9140d420bf3?q=80&w=200&auto=format&fit=crop",
-                specialties: ["Pro Bono", "Domestic Violence", "Child Custody"],
-                verified: true
-            },
-            {
-                name: "Texas RioGrande Legal Aid (TRLA)",
-                firm: "Free Legal Services",
-                location: "Austin, TX",
-                state: "Texas",
-                rating: "4.9",
-                reviews: 890,
-                image: "https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=200&auto=format&fit=crop",
-                specialties: ["Divorce", "Low-Income Support", "Protective Orders"],
-                verified: true
-            },
-            {
-                name: "Florida Rural Legal Services",
-                firm: "Non-Profit Legal Assistance",
-                location: "Lakeland, FL",
-                state: "Florida",
-                rating: "4.7",
-                reviews: 215,
-                image: "https://images.unsplash.com/photo-1556157382-97eda2d62296?q=80&w=200&auto=format&fit=crop",
-                specialties: ["Family Law", "Pro Bono", "Alimony"],
-                verified: true
-            },
-            {
-                name: "The Legal Aid Society",
-                firm: "Free Legal Representation",
-                location: "New York, NY",
-                state: "New York",
-                rating: "4.8",
-                reviews: 1205,
-                image: "https://images.unsplash.com/photo-1598550874175-4d0ef436c909?q=80&w=200&auto=format&fit=crop",
-                specialties: ["Child Custody", "Divorce", "Pro Bono"],
-                verified: true
-            },
-            {
-                name: "Affordable Family Law Center",
-                firm: "Sliding-Scale Attorneys",
-                location: "Dallas, TX",
-                state: "Texas",
-                rating: "4.5",
-                reviews: 134,
-                image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=200&auto=format&fit=crop",
-                specialties: ["Low-Cost Divorce", "Mediation"],
-                verified: false
-            },
-            {
-                name: "Community Legal Services",
-                firm: "Pro Bono Advocates",
-                location: "San Jose, CA",
-                state: "California",
-                rating: "4.6",
-                reviews: 289,
-                image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=200&auto=format&fit=crop",
-                specialties: ["Alimony", "Child Support", "Sliding Scale"],
-                verified: true
-            }
-        ];
+        // Populate States Dynamically
+        const stateSelect = document.getElementById("dir-state");
+        const uniqueStates = [...new Set(attorneys.map(a => a.state))].sort();
+        uniqueStates.forEach(state => {
+            const opt = document.createElement("option");
+            opt.value = state;
+            opt.textContent = state;
+            stateSelect.appendChild(opt);
+        });
 
         function renderCards(data) {
             const grid = document.getElementById("attorney-grid");
@@ -431,8 +391,8 @@
                             </div>
                         </div>
                         <div class="card-footer">
-                            <a href="#" class="btn-secondary btn-full">View Profile</a>
-                            <a href="#" class="btn-primary btn-full">Contact</a>
+                            <button onclick="showProfile('${attorney.name}')" class="btn-secondary btn-full" style="border: 1px solid var(--primary); background: transparent; cursor: pointer;">View Profile</button>
+                            <a href="mailto:${attorney.email}" class="btn-primary btn-full">Contact</a>
                         </div>
                     </div>
                 `;
@@ -470,6 +430,62 @@
         specialtySelect.addEventListener("change", filterDirectory);
         searchBtn.addEventListener("click", filterDirectory);
 
+        // Profile Modal Logic
+        function showProfile(name) {
+            const attorney = attorneys.find(a => a.name === name);
+            if (!attorney) return;
+            const modalBody = document.getElementById("modal-body");
+            modalBody.innerHTML = `
+                <div style="text-align:center; margin-bottom:1rem;">
+                    <img src="${attorney.image}" alt="${attorney.name}" class="avatar" style="width:120px; height:120px;">
+                    <h2 style="font-family: var(--font-serif); color: var(--primary); margin-bottom: 0.5rem;">${attorney.name}</h2>
+                    <p class="text-muted" style="font-weight: 500; font-size: 1.1rem; margin-bottom: 1.5rem;">${attorney.firm}</p>
+                </div>
+                <div style="background: var(--background); padding: 1.5rem; border-radius: 8px; margin-bottom: 1.5rem;">
+                    <p style="margin-bottom: 1rem; line-height: 1.6;"><strong>About:</strong> ${attorney.bio}</p>
+                    <p style="margin-bottom: 0.5rem;"><strong>Phone:</strong> <a href="tel:${attorney.phone}" style="color: var(--secondary); font-weight: 600;">${attorney.phone}</a></p>
+                    <p><strong>Email:</strong> <a href="mailto:${attorney.email}" style="color: var(--secondary); font-weight: 600;">${attorney.email}</a></p>
+                </div>
+                <div style="display:flex; justify-content:center;">
+                     <a href="mailto:${attorney.email}" class="btn">Send a Message</a>
+                </div>
+            `;
+            document.getElementById("profile-modal").style.display = "flex";
+        }
+        
+        function closeProfile() {
+            document.getElementById("profile-modal").style.display = "none";
+        }
+        
+        window.onclick = function(event) {
+            const modal = document.getElementById("profile-modal");
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+    
+    <!-- Profile Modal -->
+    <div id="profile-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeProfile()">&times;</span>
+            <div id="modal-body"></div>
+        </div>
+    </div>
+    
+    <!-- Cookie Banner -->
+    <div id="cookie-banner" class="cookie-banner" style="display: none;">
+        <div>We use cookies to serve personalized ads and analyze traffic. By continuing, you agree to our <a href="/privacy-policy" style="color: var(--secondary);">Privacy Policy</a>.</div>
+        <button onclick="acceptCookies()" class="btn" style="padding: 0.5rem 1rem;">Accept</button>
+    </div>
+    <script>
+        if (!localStorage.getItem('cookieConsent')) {
+            document.getElementById('cookie-banner').style.display = 'flex';
+        }
+        function acceptCookies() {
+            localStorage.setItem('cookieConsent', 'true');
+            document.getElementById('cookie-banner').style.display = 'none';
+        }
     </script>
 </body>
 </html>
