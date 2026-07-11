@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find a Family Law Attorney | Directory</title>
+    <meta name="description" content="Search our comprehensive directory of top-rated family law attorneys in your state. Find experts in divorce, child custody, alimony, and more.">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/css/index.css">
+    <style>
+        /* Modern Directory Styles */
+        .directory-header {
+            position: relative;
+            background: linear-gradient(135deg, var(--primary) 0%, #1a365d 100%);
+            padding: 6rem 0 8rem;
+            color: white;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .directory-header::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: url('https://images.unsplash.com/photo-1589829085413-56de8ae18c73?q=80&w=2000&auto=format&fit=crop') center/cover;
+            opacity: 0.1;
+            z-index: 0;
+        }
+
+        .directory-header-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Glassmorphism Search Bar */
+        .glass-search-wrapper {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 16px;
+            padding: 1.5rem;
+            max-width: 900px;
+            margin: -4rem auto 4rem;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+            display: flex;
+            gap: 1rem;
+            position: relative;
+            z-index: 10;
+        }
+
+        .glass-input {
+            flex: 1;
+            background: rgba(255, 255, 255, 0.9);
+            border: none;
+            padding: 1rem 1.5rem;
+            border-radius: 8px;
+            font-size: 1rem;
+            color: var(--text-main);
+            outline: none;
+            transition: box-shadow 0.3s ease;
+        }
+
+        .glass-input:focus {
+            box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.5);
+        }
+
+        .glass-select {
+            flex: 0.5;
+            background: rgba(255, 255, 255, 0.9);
+            border: none;
+            padding: 1rem 1.5rem;
+            border-radius: 8px;
+            font-size: 1rem;
+            color: var(--text-main);
+            outline: none;
+            cursor: pointer;
+        }
+
+        .search-btn {
+            background: var(--secondary);
+            color: var(--primary);
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .search-btn:hover {
+            background: #e6c555;
+            transform: translateY(-2px);
+        }
+
+        /* Modern Attorney Cards */
+        .attorney-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 2rem;
+        }
+
+        .attorney-card {
+            background: var(--surface);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.1);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border: 1px solid var(--border-color);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .attorney-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.15);
+            border-color: var(--secondary);
+        }
+
+        .card-header {
+            padding: 2rem 1.5rem 1rem;
+            text-align: center;
+            border-bottom: 1px solid var(--border-color);
+            background: linear-gradient(to bottom, #f8fafc, #ffffff);
+            position: relative;
+        }
+
+        .verified-badge {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: #10b981;
+            color: white;
+            padding: 0.25rem 0.5rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
+        }
+
+        .avatar {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid white;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            margin-bottom: 1rem;
+        }
+
+        .attorney-name {
+            font-family: var(--font-serif);
+            font-size: 1.5rem;
+            color: var(--primary);
+            margin-bottom: 0.25rem;
+        }
+
+        .attorney-firm {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .card-body {
+            padding: 1.5rem;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .stats-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.9rem;
+        }
+
+        .rating {
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
+            color: #f59e0b;
+            font-weight: 600;
+        }
+
+        .location {
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
+            color: var(--text-muted);
+        }
+
+        .specialties {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .specialty-tag {
+            background: var(--background);
+            color: var(--primary);
+            padding: 0.25rem 0.75rem;
+            border-radius: 6px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            border: 1px solid var(--border-color);
+        }
+
+        .card-footer {
+            padding: 1.5rem;
+            background: #f8fafc;
+            border-top: 1px solid var(--border-color);
+            display: flex;
+            gap: 1rem;
+        }
+
+        .btn-full {
+            flex: 1;
+            text-align: center;
+            padding: 0.75rem;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all 0.3s;
+            text-decoration: none;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-light);
+            color: white;
+        }
+
+        .btn-secondary {
+            background: white;
+            color: var(--primary);
+            border: 1px solid var(--primary);
+        }
+
+        .btn-secondary:hover {
+            background: var(--background);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .glass-search-wrapper {
+                flex-direction: column;
+                margin: -2rem 1rem 3rem;
+            }
+            .directory-header {
+                padding: 4rem 1rem 6rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="site-header">
+        <div class="container flex justify-between items-center">
+            <a href="/" class="logo">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--secondary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="8" r="7"></circle>
+                    <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline>
+                </svg>
+                Family Law <span>Guides</span>
+            </a>
+            <nav class="desktop-nav">
+                <ul class="flex gap-md" style="list-style: none;">
+                    <li><a href="/" class="nav-link">Home</a></li>
+                    <li><a href="/states" class="nav-link">State Guides</a></li>
+                    <li><a href="/educational" class="nav-link">Process Explainers</a></li>
+                    <li><a href="/directory" class="nav-link" style="color: var(--secondary);">Find an Attorney</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="directory-header">
+        <div class="directory-header-content">
+            <h1 style="color: white; font-size: 3.5rem;">Find the Right Family Law Attorney</h1>
+            <p style="color: rgba(255,255,255,0.8); font-size: 1.25rem; max-width: 600px; margin: 0 auto;">Connect with top-rated, verified legal professionals specializing in divorce, custody, and support cases in your state.</p>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="glass-search-wrapper">
+            <input type="text" class="glass-input" id="dir-search" placeholder="Search by name or law firm...">
+            <select class="glass-select" id="dir-state">
+                <option value="">All States</option>
+                <option value="California">California</option>
+                <option value="Texas">Texas</option>
+                <option value="Florida">Florida</option>
+                <option value="New York">New York</option>
+            </select>
+            <select class="glass-select" id="dir-specialty">
+                <option value="">All Specialties</option>
+                <option value="Divorce">Divorce</option>
+                <option value="Child Custody">Child Custody</option>
+                <option value="Alimony">Alimony</option>
+            </select>
+            <button class="search-btn">Search Directory</button>
+        </div>
+
+        <div class="attorney-grid mb-xl" id="attorney-grid">
+            <!-- Cards will be populated by JS -->
+        </div>
+    </div>
+
+    <footer class="site-footer">
+        <div class="container text-center">
+            <p class="text-sm text-muted">&copy; 2026 Family Law Guides. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Mock Data for the Directory (Cheap & Free Local US Services)
+        const attorneys = [
+            {
+                name: "Legal Services of Northern California",
+                firm: "Non-Profit Legal Aid",
+                location: "Sacramento, CA",
+                state: "California",
+                rating: "4.8",
+                reviews: 412,
+                image: "https://images.unsplash.com/photo-1577415124269-b9140d420bf3?q=80&w=200&auto=format&fit=crop",
+                specialties: ["Pro Bono", "Domestic Violence", "Child Custody"],
+                verified: true
+            },
+            {
+                name: "Texas RioGrande Legal Aid (TRLA)",
+                firm: "Free Legal Services",
+                location: "Austin, TX",
+                state: "Texas",
+                rating: "4.9",
+                reviews: 890,
+                image: "https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=200&auto=format&fit=crop",
+                specialties: ["Divorce", "Low-Income Support", "Protective Orders"],
+                verified: true
+            },
+            {
+                name: "Florida Rural Legal Services",
+                firm: "Non-Profit Legal Assistance",
+                location: "Lakeland, FL",
+                state: "Florida",
+                rating: "4.7",
+                reviews: 215,
+                image: "https://images.unsplash.com/photo-1556157382-97eda2d62296?q=80&w=200&auto=format&fit=crop",
+                specialties: ["Family Law", "Pro Bono", "Alimony"],
+                verified: true
+            },
+            {
+                name: "The Legal Aid Society",
+                firm: "Free Legal Representation",
+                location: "New York, NY",
+                state: "New York",
+                rating: "4.8",
+                reviews: 1205,
+                image: "https://images.unsplash.com/photo-1598550874175-4d0ef436c909?q=80&w=200&auto=format&fit=crop",
+                specialties: ["Child Custody", "Divorce", "Pro Bono"],
+                verified: true
+            },
+            {
+                name: "Affordable Family Law Center",
+                firm: "Sliding-Scale Attorneys",
+                location: "Dallas, TX",
+                state: "Texas",
+                rating: "4.5",
+                reviews: 134,
+                image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=200&auto=format&fit=crop",
+                specialties: ["Low-Cost Divorce", "Mediation"],
+                verified: false
+            },
+            {
+                name: "Community Legal Services",
+                firm: "Pro Bono Advocates",
+                location: "San Jose, CA",
+                state: "California",
+                rating: "4.6",
+                reviews: 289,
+                image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=200&auto=format&fit=crop",
+                specialties: ["Alimony", "Child Support", "Sliding Scale"],
+                verified: true
+            }
+        ];
+
+        function renderCards(data) {
+            const grid = document.getElementById("attorney-grid");
+            grid.innerHTML = "";
+            
+            if (data.length === 0) {
+                grid.innerHTML = "<p style='grid-column: 1/-1; text-align: center; color: var(--text-muted); padding: 3rem;'>No attorneys found matching your criteria. Try adjusting your filters.</p>";
+                return;
+            }
+
+            data.forEach(attorney => {
+                const verifiedHtml = attorney.verified 
+                    ? `<div class="verified-badge">
+                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                        Verified
+                       </div>` 
+                    : "";
+
+                const specialtiesHtml = attorney.specialties.map(s => `<span class="specialty-tag">${s}</span>`).join("");
+
+                const cardHtml = `
+                    <div class="attorney-card">
+                        <div class="card-header">
+                            ${verifiedHtml}
+                            <img src="${attorney.image}" alt="${attorney.name}" class="avatar">
+                            <h3 class="attorney-name">${attorney.name}</h3>
+                            <div class="attorney-firm">${attorney.firm}</div>
+                        </div>
+                        <div class="card-body">
+                            <div class="stats-row">
+                                <div class="rating">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                                    ${attorney.rating} <span style="color: var(--text-muted); font-weight: normal; font-size: 0.8rem;">(${attorney.reviews} reviews)</span>
+                                </div>
+                                <div class="location">
+                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                                    ${attorney.location}
+                                </div>
+                            </div>
+                            <div class="specialties">
+                                ${specialtiesHtml}
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <a href="#" class="btn-secondary btn-full">View Profile</a>
+                            <a href="#" class="btn-primary btn-full">Contact</a>
+                        </div>
+                    </div>
+                `;
+                grid.innerHTML += cardHtml;
+            });
+        }
+
+        // Initial Render
+        renderCards(attorneys);
+
+        // Filter Logic
+        const searchInput = document.getElementById("dir-search");
+        const stateSelect = document.getElementById("dir-state");
+        const specialtySelect = document.getElementById("dir-specialty");
+        const searchBtn = document.querySelector(".search-btn");
+
+        function filterDirectory() {
+            const query = searchInput.value.toLowerCase();
+            const state = stateSelect.value;
+            const specialty = specialtySelect.value;
+
+            const filtered = attorneys.filter(a => {
+                const matchName = a.name.toLowerCase().includes(query) || a.firm.toLowerCase().includes(query);
+                const matchState = state === "" || a.state === state;
+                const matchSpecialty = specialty === "" || a.specialties.includes(specialty);
+                
+                return matchName && matchState && matchSpecialty;
+            });
+
+            renderCards(filtered);
+        }
+
+        searchInput.addEventListener("input", filterDirectory);
+        stateSelect.addEventListener("change", filterDirectory);
+        specialtySelect.addEventListener("change", filterDirectory);
+        searchBtn.addEventListener("click", filterDirectory);
+
+    </script>
+</body>
+</html>
