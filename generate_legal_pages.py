@@ -47,12 +47,24 @@ pages = {
 }
 
 base_html = """<!DOCTYPE html>
-<html lang="en">
+<html lang="en-US">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{title} | Family Law Guides | familylaw.bongshai.com</title>
     <meta name="description" content="{title} | {desc} | familylaw.bongshai.com | Read More">
+    <link rel="canonical" href="https://familylaw.bongshai.com/{slug}/">
+    <link rel="alternate" hreflang="en-us" href="https://familylaw.bongshai.com/{slug}/">
+    <meta name="google-site-verification" content="YOUR_GSC_VERIFICATION_STRING" />
+    
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){{dataLayer.push(arguments);}}
+      gtag('js', new Date());
+      gtag('config', 'G-XXXXXXXXXX');
+    </script>
     
     <!-- Google AdSense -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-YOUR_CLIENT_ID" crossorigin="anonymous"></script>
@@ -117,6 +129,7 @@ base_html = """<!DOCTYPE html>
 
 for slug, data in pages.items():
     os.makedirs(slug, exist_ok=True)
+    data["slug"] = slug
     with open(os.path.join(slug, "index.html"), "w", encoding="utf-8") as f:
         f.write(base_html.format(**data))
 

@@ -44,13 +44,24 @@ def generate_state_html(state):
     }}"""
     
     html_content = f"""<!DOCTYPE html>
-<html lang="en">
+<html lang="en-US">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{title} | familylaw.bongshai.com</title>
     <meta name="description" content="{title} | {desc} | familylaw.bongshai.com | Read Guide">
     <link rel="canonical" href="{url}">
+    <link rel="alternate" hreflang="en-us" href="{url}">
+    <meta name="google-site-verification" content="YOUR_GSC_VERIFICATION_STRING" />
+    
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){{dataLayer.push(arguments);}}
+      gtag('js', new Date());
+      gtag('config', 'G-XXXXXXXXXX');
+    </script>
     
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="article">
@@ -65,7 +76,40 @@ def generate_state_html(state):
     <meta property="twitter:description" content="{desc}">
     
     <script type="application/ld+json">
-    {schema}
+    [
+        {schema},
+        {{
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+                {{ "@type": "ListItem", "position": 1, "name": "Home", "item": "https://familylaw.bongshai.com/" }},
+                {{ "@type": "ListItem", "position": 2, "name": "States", "item": "https://familylaw.bongshai.com/states/" }},
+                {{ "@type": "ListItem", "position": 3, "name": "{state}", "item": "{url}" }}
+            ]
+        }},
+        {{
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+                {{
+                    "@type": "Question",
+                    "name": "Is there a statute of limitations on collecting child support in {state}?",
+                    "acceptedAnswer": {{
+                        "@type": "Answer",
+                        "text": "In most jurisdictions, including {state}, there is generally no statute of limitations on the collection of past-due child support. Arrears can often be collected indefinitely until paid in full."
+                    }}
+                }},
+                {{
+                    "@type": "Question",
+                    "name": "How long do I have to appeal a divorce decree?",
+                    "acceptedAnswer": {{
+                        "@type": "Answer",
+                        "text": "Typically, you have a very short window, often between 30 to 60 days after the final judgment is entered, to file a Notice of Appeal."
+                    }}
+                }}
+            ]
+        }}
+    ]
     </script>
     
     <!-- Google AdSense -->
@@ -104,23 +148,39 @@ def generate_state_html(state):
             <header class="mb-lg text-center">
                 <span class="badge mb-sm">State Guide</span>
                 <h1>{title}</h1>
-                <p class="text-muted">Last updated: July 2026 | Reviewed by Legal Professionals</p>
+                <div class="author-bio" style="display: flex; align-items: center; justify-content: center; gap: 1rem; margin-top: 1.5rem; text-align: left;">
+                    <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=100&auto=format&fit=crop" alt="Jane Doe, Esq." style="width: 50px; height: 50px; border-radius: 50%;">
+                    <div>
+                        <p style="margin: 0; font-weight: 600; color: var(--primary);">Written by Jane Doe, Esq.</p>
+                        <p class="text-sm text-muted" style="margin: 0;">Last updated: July 2026</p>
+                    </div>
+                </div>
             </header>
             
             <div class="ad-placeholder">AdSense Leaderboard Space</div>
             
             <div class="content">
+                <div class="toc" style="background: var(--surface); padding: 1.5rem; border-radius: 8px; margin-bottom: 2rem; border: 1px solid var(--border-color);">
+                    <h3 style="margin-top:0;">Table of Contents</h3>
+                    <ul style="margin-bottom:0;">
+                        <li><a href="#divorce-filings">Divorce Filings and Residency Requirements</a></li>
+                        <li><a href="#property-division">Statute of Limitations on Property Division</a></li>
+                        <li><a href="#enforcing-support">Enforcing Alimony and Child Support</a></li>
+                        <li><a href="#faqs">Frequently Asked Questions</a></li>
+                    </ul>
+                </div>
+                
                 <p>Navigating family law in <strong>{state}</strong> requires a solid understanding of the specific statutes and timelines that apply to your case. A "statute of limitations" is a law that sets the maximum time after an event within which legal proceedings may be initiated.</p>
                 
-                <h2>Divorce Filings and Residency Requirements in {state}</h2>
+                <h2 id="divorce-filings">Divorce Filings and Residency Requirements in {state}</h2>
                 <p>Before filing for divorce in {state}, one or both spouses must meet the state's residency requirements. Most states require you to have lived in the state for a certain period (e.g., 6 months to a year) before you can file.</p>
                 
                 <div class="ad-placeholder">AdSense In-Article Space</div>
                 
-                <h2>Statute of Limitations on Property Division</h2>
+                <h2 id="property-division">Statute of Limitations on Property Division</h2>
                 <p>In {state}, the timeline to contest or enforce a property division order after a divorce is finalized is strictly regulated. If a spouse hides assets during the divorce proceedings, there is a limited window (often 1 to 5 years from discovery) to reopen the case.</p>
                 
-                <h3>Enforcing Alimony and Child Support</h3>
+                <h3 id="enforcing-support">Enforcing Alimony and Child Support</h3>
                 <p>Child support and alimony arrears are taken very seriously. In many jurisdictions, including {state}, there is no statute of limitations on the collection of past-due child support, meaning arrears can be collected indefinitely.</p>
                 
                 <table>
@@ -149,6 +209,27 @@ def generate_state_html(state):
                         </tr>
                     </tbody>
                 </table>
+                
+                <h2 id="faqs">Frequently Asked Questions about {state} Family Law</h2>
+                <div itemscope itemprop="mainEntity" itemtype="https://schema.org/Question" style="margin-bottom: 1.5rem;">
+                    <h3 itemprop="name" style="font-size: 1.2rem; margin-bottom: 0.5rem;">Is there a statute of limitations on collecting child support in {state}?</h3>
+                    <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                        <div itemprop="text">
+                            <p>In most jurisdictions, including {state}, there is generally no statute of limitations on the collection of past-due child support. Arrears can often be collected indefinitely until paid in full.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div itemscope itemprop="mainEntity" itemtype="https://schema.org/Question" style="margin-bottom: 1.5rem;">
+                    <h3 itemprop="name" style="font-size: 1.2rem; margin-bottom: 0.5rem;">How long do I have to appeal a divorce decree?</h3>
+                    <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                        <div itemprop="text">
+                            <p>Typically, you have a very short window, often between 30 to 60 days after the final judgment is entered, to file a Notice of Appeal.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="ad-placeholder">AdSense End-of-Article Space</div>
                 
                 <blockquote class="ymyl-disclaimer mt-lg" style="background-color: #fff3cd; border-left-color: #ffc107;">
                     <strong>Disclaimer:</strong> The content on this website is for educational and informational purposes only and does not constitute professional legal advice. Laws in {state} are subject to change. Please consult with a licensed family law attorney in {state} regarding your specific situation.
@@ -190,12 +271,24 @@ for state in states:
 
 # Generate main states index
 index_html = f"""<!DOCTYPE html>
-<html lang="en">
+<html lang="en-US">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>State Statute of Limitations Guides | familylaw.bongshai.com</title>
     <meta name="description" content="State Statute of Limitations Guides | Find the family law statute of limitations guide specific to your jurisdiction. | familylaw.bongshai.com | Browse States">
+    <link rel="canonical" href="https://familylaw.bongshai.com/states/">
+    <link rel="alternate" hreflang="en-us" href="https://familylaw.bongshai.com/states/">
+    <meta name="google-site-verification" content="YOUR_GSC_VERIFICATION_STRING" />
+    
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){{dataLayer.push(arguments);}}
+      gtag('js', new Date());
+      gtag('config', 'G-XXXXXXXXXX');
+    </script>
     
     <!-- Google AdSense -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-YOUR_CLIENT_ID" crossorigin="anonymous"></script>

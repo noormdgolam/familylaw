@@ -69,13 +69,24 @@ def generate_intl_html(country):
     }}"""
     
     html_content = f"""<!DOCTYPE html>
-<html lang="en">
+<html lang="en-US">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{title} | International Guides | familylaw.bongshai.com</title>
     <meta name="description" content="{title} | {desc} | familylaw.bongshai.com | Read Guide">
     <link rel="canonical" href="{url}">
+    <link rel="alternate" hreflang="en-us" href="{url}">
+    <meta name="google-site-verification" content="YOUR_GSC_VERIFICATION_STRING" />
+    
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){{dataLayer.push(arguments);}}
+      gtag('js', new Date());
+      gtag('config', 'G-XXXXXXXXXX');
+    </script>
     
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="article">
@@ -90,7 +101,32 @@ def generate_intl_html(country):
     <meta property="twitter:description" content="{desc}">
     
     <script type="application/ld+json">
-    {schema}
+    [
+        {schema},
+        {{
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+                {{ "@type": "ListItem", "position": 1, "name": "Home", "item": "https://familylaw.bongshai.com/" }},
+                {{ "@type": "ListItem", "position": 2, "name": "International", "item": "https://familylaw.bongshai.com/international/" }},
+                {{ "@type": "ListItem", "position": 3, "name": "{name}", "item": "{url}" }}
+            ]
+        }},
+        {{
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+                {{
+                    "@type": "Question",
+                    "name": "Can a US court enforce custody in {name}?",
+                    "acceptedAnswer": {{
+                        "@type": "Answer",
+                        "text": "Enforcement depends on international treaties such as the Hague Convention. It is critical to consult an expert in international family law to ensure your rights are protected across borders."
+                    }}
+                }}
+            ]
+        }}
+    ]
     </script>
     
     <!-- Google AdSense -->
@@ -125,6 +161,13 @@ def generate_intl_html(country):
             <header class="mb-lg text-center">
                 <span class="badge mb-sm">International Guide</span>
                 <h1>{title}</h1>
+                <div class="author-bio" style="display: flex; align-items: center; justify-content: center; gap: 1rem; margin-top: 1.5rem; text-align: left;">
+                    <img src="https://images.unsplash.com/photo-1598550874175-4d0ef436c909?q=80&w=100&auto=format&fit=crop" alt="Dr. Robert Global, Int. Law Expert" style="width: 50px; height: 50px; border-radius: 50%;">
+                    <div>
+                        <p style="margin: 0; font-weight: 600; color: var(--primary);">Written by Dr. Robert Global</p>
+                        <p class="text-sm text-muted" style="margin: 0;">Last updated: July 2026</p>
+                    </div>
+                </div>
             </header>
             
             <div class="ad-placeholder">AdSense Leaderboard Space</div>
@@ -133,17 +176,36 @@ def generate_intl_html(country):
                 <p class="lead"><strong>{desc}</strong></p>
                 <p>Family law varies drastically across borders. In <strong>{name}</strong>, navigating the legal intricacies of separation, divorce, and child custody requires specific regional knowledge.</p>
                 
-                <h2>Overview of {name} Family Law</h2>
+                <div class="toc" style="background: var(--surface); padding: 1.5rem; border-radius: 8px; margin-bottom: 2rem; border: 1px solid var(--border-color);">
+                    <h3 style="margin-top:0;">Table of Contents</h3>
+                    <ul style="margin-bottom:0;">
+                        <li><a href="#overview">Overview of {name} Family Law</a></li>
+                        <li><a href="#key-considerations">Key Considerations</a></li>
+                        <li><a href="#faqs">Frequently Asked Questions</a></li>
+                    </ul>
+                </div>
+                
+                <h2 id="overview">Overview of {name} Family Law</h2>
                 <p>{details}</p>
                 
                 <div class="ad-placeholder">AdSense In-Article Space</div>
                 
-                <h2>Key Considerations</h2>
+                <h2 id="key-considerations">Key Considerations</h2>
                 <ul>
                     <li><strong>Jurisdiction:</strong> Ensure the courts in {name} have the legal authority to hear your case.</li>
                     <li><strong>Asset Tracing:</strong> International divorces may complicate the tracing of overseas assets.</li>
                     <li><strong>Child Relocation:</strong> Specific laws govern the movement of children out of {name} without the consent of both parents.</li>
                 </ul>
+                
+                <h2 id="faqs">Frequently Asked Questions</h2>
+                <div itemscope itemprop="mainEntity" itemtype="https://schema.org/Question" style="margin-bottom: 1.5rem;">
+                    <h3 itemprop="name" style="font-size: 1.2rem; margin-bottom: 0.5rem;">Can a US court enforce custody in {name}?</h3>
+                    <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                        <div itemprop="text">
+                            <p>Enforcement depends on international treaties such as the Hague Convention. It is critical to consult an expert in international family law to ensure your rights are protected across borders.</p>
+                        </div>
+                    </div>
+                </div>
                 
                 <blockquote class="ymyl-disclaimer mt-lg" style="background-color: #fff3cd; border-left-color: #ffc107;">
                     <strong>Disclaimer:</strong> The content on this website is for educational and informational purposes only and does not constitute professional legal advice. Please consult with a legal professional licensed in {name} regarding your specific situation.
@@ -182,12 +244,24 @@ def generate_intl_html(country):
 
 # Generate main international index
 index_html = f"""<!DOCTYPE html>
-<html lang="en">
+<html lang="en-US">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>International Family Law Guides | familylaw.bongshai.com</title>
-    <meta name="description" content="International Family Law Guides | Global guides for family law, covering the UK, Canada, Australia, Ireland, and South Africa. | familylaw.bongshai.com | Read Guide">
+    <meta name="description" content="International Family Law Guides | Navigating cross-border divorces and international custody disputes. | familylaw.bongshai.com">
+    <link rel="canonical" href="https://familylaw.bongshai.com/international/">
+    <link rel="alternate" hreflang="en-us" href="https://familylaw.bongshai.com/international/">
+    <meta name="google-site-verification" content="YOUR_GSC_VERIFICATION_STRING" />
+    
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){{dataLayer.push(arguments);}}
+      gtag('js', new Date());
+      gtag('config', 'G-XXXXXXXXXX');
+    </script>
     <!-- Google AdSense -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-YOUR_CLIENT_ID" crossorigin="anonymous"></script>
 
