@@ -16,8 +16,8 @@ for directory in ["states", "educational", "international"]:
             if os.path.isdir(os.path.join(directory, slug)):
                 urls.append({"loc": f"{base_url}/{directory}/{slug}/", "changefreq": "monthly", "priority": "0.6"})
 
-xml_content = '<?xml version="1.0" encoding="UTF-8"?>\\n'
-xml_content += '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\\n'
+xml_content = '<?xml version="1.0" encoding="UTF-8"?>\n'
+xml_content += '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
 
 today = datetime.now().strftime("%Y-%m-%d")
 
@@ -27,7 +27,7 @@ for url in urls:
     <lastmod>{today}</lastmod>
     <changefreq>{url["changefreq"]}</changefreq>
     <priority>{url["priority"]}</priority>
-  </url>\\n"""
+  </url>\n"""
 
 xml_content += '</urlset>'
 

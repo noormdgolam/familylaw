@@ -1,351 +1,423 @@
-<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n  <url>
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
     <loc>https://familylaw.bongshai.com</loc>
     <lastmod>2026-07-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
-  </url>\n  <url>
+  </url>
+  <url>
     <loc>https://familylaw.bongshai.com/states</loc>
     <lastmod>2026-07-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
-  </url>\n  <url>
+  </url>
+  <url>
     <loc>https://familylaw.bongshai.com/educational</loc>
     <lastmod>2026-07-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
-  </url>\n  <url>
+  </url>
+  <url>
     <loc>https://familylaw.bongshai.com/directory</loc>
     <lastmod>2026-07-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
-  </url>\n  <url>
+  </url>
+  <url>
     <loc>https://familylaw.bongshai.com/international</loc>
     <lastmod>2026-07-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
-  </url>\n  <url>
+  </url>
+  <url>
     <loc>https://familylaw.bongshai.com/privacy-policy</loc>
     <lastmod>2026-07-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
-  </url>\n  <url>
+  </url>
+  <url>
     <loc>https://familylaw.bongshai.com/terms-of-service</loc>
     <lastmod>2026-07-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
-  </url>\n  <url>
+  </url>
+  <url>
     <loc>https://familylaw.bongshai.com/about</loc>
     <lastmod>2026-07-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
-  </url>\n  <url>
+  </url>
+  <url>
     <loc>https://familylaw.bongshai.com/contact</loc>
     <lastmod>2026-07-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
-  </url>\n  <url>
+  </url>
+  <url>
     <loc>https://familylaw.bongshai.com/disclaimer</loc>
     <lastmod>2026-07-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
-  </url>\n  <url>
+  </url>
+  <url>
     <loc>https://familylaw.bongshai.com/states/alabama/</loc>
     <lastmod>2026-07-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
-  </url>\n  <url>
+  </url>
+  <url>
     <loc>https://familylaw.bongshai.com/states/alaska/</loc>
     <lastmod>2026-07-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
-  </url>\n  <url>
+  </url>
+  <url>
     <loc>https://familylaw.bongshai.com/states/arizona/</loc>
     <lastmod>2026-07-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
-  </url>\n  <url>
+  </url>
+  <url>
     <loc>https://familylaw.bongshai.com/states/arkansas/</loc>
     <lastmod>2026-07-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
-  </url>\n  <url>
+  </url>
+  <url>
     <loc>https://familylaw.bongshai.com/states/california/</loc>
     <lastmod>2026-07-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
-  </url>\n  <url>
+  </url>
+  <url>
     <loc>https://familylaw.bongshai.com/states/colorado/</loc>
     <lastmod>2026-07-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
-  </url>\n  <url>
+  </url>
+  <url>
     <loc>https://familylaw.bongshai.com/states/connecticut/</loc>
     <lastmod>2026-07-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
-  </url>\n  <url>
+  </url>
+  <url>
     <loc>https://familylaw.bongshai.com/states/delaware/</loc>
     <lastmod>2026-07-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
-  </url>\n  <url>
+  </url>
+  <url>
     <loc>https://familylaw.bongshai.com/states/florida/</loc>
     <lastmod>2026-07-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
-  </url>\n  <url>
+  </url>
+  <url>
     <loc>https://familylaw.bongshai.com/states/georgia/</loc>
     <lastmod>2026-07-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
-  </url>\n  <url>
+  </url>
+  <url>
     <loc>https://familylaw.bongshai.com/states/hawaii/</loc>
     <lastmod>2026-07-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
-  </url>\n  <url>
+  </url>
+  <url>
     <loc>https://familylaw.bongshai.com/states/idaho/</loc>
     <lastmod>2026-07-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
-  </url>\n  <url>
+  </url>
+  <url>
     <loc>https://familylaw.bongshai.com/states/illinois/</loc>
     <lastmod>2026-07-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
-  </url>\n  <url>
+  </url>
+  <url>
     <loc>https://familylaw.bongshai.com/states/indiana/</loc>
     <lastmod>2026-07-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
-  </url>\n  <url>
+  </url>
+  <url>
     <loc>https://familylaw.bongshai.com/states/iowa/</loc>
     <lastmod>2026-07-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
-  </url>\n  <url>
+  </url>
+  <url>
     <loc>https://familylaw.bongshai.com/states/kansas/</loc>
     <lastmod>2026-07-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
-  </url>\n  <url>
+  </url>
+  <url>
     <loc>https://familylaw.bongshai.com/states/kentucky/</loc>
     <lastmod>2026-07-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
-  </url>\n  <url>
+  </url>
+  <url>
     <loc>https://familylaw.bongshai.com/states/louisiana/</loc>
     <lastmod>2026-07-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
-  </url>\n  <url>
+  </url>
+  <url>
     <loc>https://familylaw.bongshai.com/states/maine/</loc>
     <lastmod>2026-07-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
-  </url>\n  <url>
+  </url>
+  <url>
     <loc>https://familylaw.bongshai.com/states/maryland/</loc>
     <lastmod>2026-07-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
-  </url>\n  <url>
+  </url>
+  <url>
     <loc>https://familylaw.bongshai.com/states/massachusetts/</loc>
     <lastmod>2026-07-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
-  </url>\n  <url>
+  </url>
+  <url>
     <loc>https://familylaw.bongshai.com/states/michigan/</loc>
     <lastmod>2026-07-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
-  </url>\n  <url>
+  </url>
+  <url>
     <loc>https://familylaw.bongshai.com/states/minnesota/</loc>
     <lastmod>2026-07-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
-  </url>\n  <url>
+  </url>
+  <url>
     <loc>https://familylaw.bongshai.com/states/mississippi/</loc>
     <lastmod>2026-07-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
-  </url>\n  <url>
+  </url>
+  <url>
     <loc>https://familylaw.bongshai.com/states/missouri/</loc>
     <lastmod>2026-07-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
-  </url>\n  <url>
+  </url>
+  <url>
     <loc>https://familylaw.bongshai.com/states/montana/</loc>
     <lastmod>2026-07-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
-  </url>\n  <url>
+  </url>
+  <url>
     <loc>https://familylaw.bongshai.com/states/nebraska/</loc>
     <lastmod>2026-07-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
-  </url>\n  <url>
+  </url>
+  <url>
     <loc>https://familylaw.bongshai.com/states/nevada/</loc>
     <lastmod>2026-07-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
-  </url>\n  <url>
+  </url>
+  <url>
     <loc>https://familylaw.bongshai.com/states/new-hampshire/</loc>
     <lastmod>2026-07-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
-  </url>\n  <url>
+  </url>
+  <url>
     <loc>https://familylaw.bongshai.com/states/new-jersey/</loc>
     <lastmod>2026-07-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
-  </url>\n  <url>
+  </url>
+  <url>
     <loc>https://familylaw.bongshai.com/states/new-mexico/</loc>
     <lastmod>2026-07-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
-  </url>\n  <url>
+  </url>
+  <url>
     <loc>https://familylaw.bongshai.com/states/new-york/</loc>
     <lastmod>2026-07-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
-  </url>\n  <url>
+  </url>
+  <url>
     <loc>https://familylaw.bongshai.com/states/north-carolina/</loc>
     <lastmod>2026-07-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
-  </url>\n  <url>
+  </url>
+  <url>
     <loc>https://familylaw.bongshai.com/states/north-dakota/</loc>
     <lastmod>2026-07-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
-  </url>\n  <url>
+  </url>
+  <url>
     <loc>https://familylaw.bongshai.com/states/ohio/</loc>
     <lastmod>2026-07-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
-  </url>\n  <url>
+  </url>
+  <url>
     <loc>https://familylaw.bongshai.com/states/oklahoma/</loc>
     <lastmod>2026-07-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
-  </url>\n  <url>
+  </url>
+  <url>
     <loc>https://familylaw.bongshai.com/states/oregon/</loc>
     <lastmod>2026-07-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
-  </url>\n  <url>
+  </url>
+  <url>
     <loc>https://familylaw.bongshai.com/states/pennsylvania/</loc>
     <lastmod>2026-07-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
-  </url>\n  <url>
+  </url>
+  <url>
     <loc>https://familylaw.bongshai.com/states/rhode-island/</loc>
     <lastmod>2026-07-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
-  </url>\n  <url>
+  </url>
+  <url>
     <loc>https://familylaw.bongshai.com/states/south-carolina/</loc>
     <lastmod>2026-07-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
-  </url>\n  <url>
+  </url>
+  <url>
     <loc>https://familylaw.bongshai.com/states/south-dakota/</loc>
     <lastmod>2026-07-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
-  </url>\n  <url>
+  </url>
+  <url>
     <loc>https://familylaw.bongshai.com/states/tennessee/</loc>
     <lastmod>2026-07-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
-  </url>\n  <url>
+  </url>
+  <url>
     <loc>https://familylaw.bongshai.com/states/texas/</loc>
     <lastmod>2026-07-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
-  </url>\n  <url>
+  </url>
+  <url>
     <loc>https://familylaw.bongshai.com/states/utah/</loc>
     <lastmod>2026-07-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
-  </url>\n  <url>
+  </url>
+  <url>
     <loc>https://familylaw.bongshai.com/states/vermont/</loc>
     <lastmod>2026-07-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
-  </url>\n  <url>
+  </url>
+  <url>
     <loc>https://familylaw.bongshai.com/states/virginia/</loc>
     <lastmod>2026-07-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
-  </url>\n  <url>
+  </url>
+  <url>
     <loc>https://familylaw.bongshai.com/states/washington/</loc>
     <lastmod>2026-07-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
-  </url>\n  <url>
+  </url>
+  <url>
     <loc>https://familylaw.bongshai.com/states/west-virginia/</loc>
     <lastmod>2026-07-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
-  </url>\n  <url>
+  </url>
+  <url>
     <loc>https://familylaw.bongshai.com/states/wisconsin/</loc>
     <lastmod>2026-07-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
-  </url>\n  <url>
+  </url>
+  <url>
     <loc>https://familylaw.bongshai.com/states/wyoming/</loc>
     <lastmod>2026-07-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
-  </url>\n  <url>
+  </url>
+  <url>
     <loc>https://familylaw.bongshai.com/educational/alimony-spousal-support/</loc>
     <lastmod>2026-07-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
-  </url>\n  <url>
+  </url>
+  <url>
     <loc>https://familylaw.bongshai.com/educational/child-custody-fundamentals/</loc>
     <lastmod>2026-07-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
-  </url>\n  <url>
+  </url>
+  <url>
     <loc>https://familylaw.bongshai.com/educational/division-of-marital-property/</loc>
     <lastmod>2026-07-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
-  </url>\n  <url>
+  </url>
+  <url>
     <loc>https://familylaw.bongshai.com/educational/divorce-filing-process/</loc>
     <lastmod>2026-07-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
-  </url>\n  <url>
+  </url>
+  <url>
     <loc>https://familylaw.bongshai.com/educational/domestic-violence-restraining-orders/</loc>
     <lastmod>2026-07-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
-  </url>\n  <url>
+  </url>
+  <url>
     <loc>https://familylaw.bongshai.com/international/australia/</loc>
     <lastmod>2026-07-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
-  </url>\n  <url>
+  </url>
+  <url>
     <loc>https://familylaw.bongshai.com/international/canada/</loc>
     <lastmod>2026-07-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
-  </url>\n  <url>
+  </url>
+  <url>
     <loc>https://familylaw.bongshai.com/international/ireland/</loc>
     <lastmod>2026-07-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
-  </url>\n  <url>
+  </url>
+  <url>
     <loc>https://familylaw.bongshai.com/international/south-africa/</loc>
     <lastmod>2026-07-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
-  </url>\n  <url>
+  </url>
+  <url>
     <loc>https://familylaw.bongshai.com/international/uk/</loc>
     <lastmod>2026-07-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
-  </url>\n</urlset>
+  </url>
+</urlset>
